@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CONTACT FORM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+    }
+    .form-container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px  #050505;
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #f0f1f0;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 20px;
+      background-color: #2e2e2e;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+    }
+    .output h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>CONTACT FORM</h2>
+    
+    <input type="text" id="firstName" placeholder="First Name" />
+    <input type="text" id="lastName" placeholder="Last Name" />
+    <input type="tel" id="phone" placeholder="Phone Number" />
+    <input type="email" id="email" placeholder="Email ID" />
+    <textarea id="address" placeholder="Address" rows="3"></textarea>
+    
+    <button onclick="saveDetails()">Save</button>
+
+    <div class="output" id="savedInfo">
+      <h3> Saved Information:</h3>
+      <p id="outName"></p>
+      <p id="outPhone"></p>
+      <p id="outEmail"></p>
+      <p id="outAddress"></p>
+    </div>
+  </div>
+
+  <script>
+    function saveDetails() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+
+      document.getElementById('outName').innerText = Name: ${firstName} ${lastName};
+      document.getElementById('outPhone').innerText = Phone: ${phone};
+      document.getElementById('outEmail').innerText = Email: ${email};
+      document.getElementById('outAddress').innerText = Address: ${address};
+
+      document.getElementById('savedInfo').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
